@@ -5,20 +5,13 @@ import './App.css'
 
 function App() {
 
-  const UserLogged = "Rifqi";
-  const UserLoggedJSX = <strong>Bwa Version</strong>;
-  let a = 1;
-  let b = 2;
-  
-
-
   return (
-    <div className='App'>
-      {UserLogged}
-      {UserLoggedJSX}
-      <h1>Belajar Versi BWA</h1>
+    <div className="Parentbox">
+      <div className="foto">
+    <img src="minuman1.jpeg"  />
+      </div>
 
-      {a + b % 200}
+      <div className="Deskripsi"></div>
     </div>
   )
 }
