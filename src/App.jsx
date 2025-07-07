@@ -46,6 +46,10 @@ function CheckDiscount(props) {
 
 function ProductInfo (props) {
   const {category, name, harga, isDiscount} = props;
+  const Benefits = ["Tidak Kusut Terkena Air", "Bahan Lebih Halus", "Tidak Gerah"];  {/**loops.map */}
+  const listBenefits = Benefits.map((itemBenefit) =>
+    <li>{itemBenefit}</li>
+  );
   
 
   return(
@@ -57,6 +61,10 @@ function ProductInfo (props) {
   <p className="Info">
     One of the most recognizable shoes in the AJ collection, the Air Jordan 3 Retro features lightweight, visible cushioning just like the original from '88. Signature details and materials celebrate the game-changing icon.
   </p>
+
+  <ul>
+    {listBenefits}
+  </ul>
   <a onClick={(e) => TambahCart(name, e)} href="#"> Add to Cart</a>
 </div>
   ) 
