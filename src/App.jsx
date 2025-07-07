@@ -7,22 +7,31 @@ function App() {
   return (
     <div className="Parentbox">
 
+
+      <FotoProduct  />
+      <ProductInfo category = "RUNNING" name = "White sports shoes" harga = "700.000" />
     </div>
   )
 }
 
 function FotoProduct() {
-        <div className="foto">
-    <img src="sepatu2.jpg"  />
+
+  return (
+      <div className="foto">
+       <img src="sepatu2.jpg"  />
       </div>
+  )
+
 }
 
 
 
-function ProductInfo () {
-    const category = "RUNNING";
-  const name = "White sports shoes";
-  const harga = "700.000";
+
+
+
+function ProductInfo (props) {
+  const {category, name, harga} = props;
+  
 
   return(
   <div className="Deskripsi">
@@ -32,11 +41,13 @@ function ProductInfo () {
   <p className="Info">
     One of the most recognizable shoes in the AJ collection, the Air Jordan 3 Retro features lightweight, visible cushioning just like the original from '88. Signature details and materials celebrate the game-changing icon.
   </p>
+  <a onClick={(e) => TambahCart(name, e)} href="#"> Add to Cart</a>
 </div>
-  )
+  ) 
+}
 
-
-  
+function TambahCart(e) {
+  return console.log("Tambah Product " + e)
 }
 
 export default App
