@@ -34,34 +34,41 @@ function ReviewItems() {
     {
       "id": 1,
       "name": "Ahmad Yani",
-      "review" :"Harga murah dan kualitasnya bagus."
+      "review" :"Harga murah dan kualitasnya bagus.",
+      "img"  : "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg"
+
 
     },
     {
       "id": 2,
       "name": "Ahmad Aldo",
-      "review" :"Harga murah dan kualitasnya bagus."
+      "review" :"Lumayan boleh pakai.",
+      "img"  : "https://images.pexels.com/photos/2128807/pexels-photo-2128807.jpeg"
 
     },
     {
       "id": 3,
       "name": "Ahmad Zaki",
-      "review" :"Harga murah dan kualitasnya bagus."
+      "review" :"Bagus boleh lah.",
+      "img"  : "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg"
 
     }
   ];
-  return (
-    <div className="Review-box">
-      <h2>Reviews</h2>
-
-      <div className="Item">
-        <img src="/u1.jpg" alt="User Profile" />
+  const listReview = users.map((itemReview) =>
+    <div className="Item">
+        <img src={itemReview.img} alt="User Profile" />
         <div className="User">
-          <h3>{users}</h3>
-          <p>Harga murah dan kualitasnya bagus.</p>
+          <h3>{itemReview.name}</h3>
+          <p>{itemReview.review}</p>
         </div>
       </div>
-    </div>
+  );
+  
+  return (
+      <div className="Review-box">
+        <h2>Reviews</h2>
+        {listReview}
+      </div>
   );
 }
 
