@@ -9,7 +9,7 @@ function App() {
 
 
       <FotoProduct  />
-      <ProductInfo category = "RUNNING" name = "White sports shoes" harga = "700.000" />
+      <ProductInfo category = "RUNNING" name = "White sports shoes" harga = "700.000"  isDiscount = "comming"/> {/**conditional rendering */}
     </div>
   )
 }
@@ -25,12 +25,27 @@ function FotoProduct() {
 }
 
 
-
+function CheckDiscount(props) {
+  const {isDiscount} = props;
+  if(isDiscount == "yes"){
+    return(
+      <p>Discount 50% Off</p>
+    );
+  }else if(isDiscount == "comming") {
+    return(
+      <p>Akan Ada discount</p>
+    );
+  }else{
+    return(
+      <p>Maaf blm ada discount</p>
+    );
+  }
+}
 
 
 
 function ProductInfo (props) {
-  const {category, name, harga} = props;
+  const {category, name, harga, isDiscount} = props;
   
 
   return(
@@ -38,6 +53,7 @@ function ProductInfo (props) {
   <p className='Cate'>{category}</p>
   <h1 className="Title">{name}</h1>
   <p className='Price'>IDR {harga}</p>
+  <CheckDiscount  isDiscount = {isDiscount}/>
   <p className="Info">
     One of the most recognizable shoes in the AJ collection, the Air Jordan 3 Retro features lightweight, visible cushioning just like the original from '88. Signature details and materials celebrate the game-changing icon.
   </p>
