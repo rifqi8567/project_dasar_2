@@ -6,23 +6,65 @@ function App() {
 
   return (
     <div className="Parentbox">
-
-
+      <div className="ProductArea">
       <FotoProduct  />
       <ProductInfo category = "RUNNING" name = "White sports shoes" harga = "700.000"  isDiscount = "comming"/> {/**conditional rendering */}
+      </div>
+
+      
+      <ReviewItems />
     </div>
+
   )
 }
+
 
 function FotoProduct() {
 
   return (
       <div className="foto">
-       <img src="sepatu2.jpg"  />
+       <img src="/sepatu2.jpg"  />
       </div>
   )
 
 }
+
+function ReviewItems() {
+  const  users = [
+    {
+      "id": 1,
+      "name": "Ahmad Yani",
+      "review" :"Harga murah dan kualitasnya bagus."
+
+    },
+    {
+      "id": 2,
+      "name": "Ahmad Aldo",
+      "review" :"Harga murah dan kualitasnya bagus."
+
+    },
+    {
+      "id": 3,
+      "name": "Ahmad Zaki",
+      "review" :"Harga murah dan kualitasnya bagus."
+
+    }
+  ];
+  return (
+    <div className="Review-box">
+      <h2>Reviews</h2>
+
+      <div className="Item">
+        <img src="/u1.jpg" alt="User Profile" />
+        <div className="User">
+          <h3>{users}</h3>
+          <p>Harga murah dan kualitasnya bagus.</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
 
 function CheckDiscount(props) {
